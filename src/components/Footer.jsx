@@ -4,9 +4,9 @@
 function Footer() {
     return (
         <div>
-            <div className="flex flex-col items-center py-44 grid grid-cols-2 gap-4 px16">
+            <div className="flex flex-col items-center py-44 grid grid-cols-2 gap-4 px16 ">
                 <div>
-                    <h1 className="text-3xl px-72 font-serif">What is <br></br>Minimalism?
+                    <h1 className="text-3xl px-72 font-serif ">What is <br></br>Minimalism?
 
                     </h1>
                 </div>
@@ -21,19 +21,18 @@ function Footer() {
             </div>
             <div className="flex flex-col items-center py-8">
                 <div className="w-full border-dashed border-t border-gray-300 mb-4"></div>
-                <h1 className="text-8xl p-16 font-serif">
+                <h1 className="text-8xl p-16 font-serif ">
                     Embrace less, <span className="italic">discover</span> more.
                 </h1>
             </div>
-            <div className="flex items-center py-8 p-16">
-                <a href="https://twitter.com" className="p-8 text-lg font-light">
+            <div className="flex items-center py-8 p-16 pb-0">
+                <a href="https://omerduran.dev" className="p-8 text-lg font-light ">
                     Ömer Duran ⤴
                 </a>
-                <a href="https://are.na" className="p-8 text-lg font-light">
-                    Instagram
-                </a>
-                <a href="https://read.cv" className="p-8 text-lg font-light">
-                    Dribbble
+            </div>
+            <div className="flex items-center py-8 p-16 pt-0">
+                <a href="https://digitalbeacon.co/report/purest-picks-vercel-app" className="pt-0 p-8 font-light text-sm text-emerald-700 sm:p-0 xs:p-0">
+                    this web page has been graded A+
                 </a>
             </div>
         </div>
