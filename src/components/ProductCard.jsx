@@ -11,7 +11,7 @@ const ProductCard = ({ brand, category, productName, image, price, link }) => {
             transition={{ duration: 0.3 }}
         >
 
-            <img src={image} alt={productName} className="w-full h-3/4 object-cover mb-4"/>
+            <img loading="lazy" src={image} alt={productName} className="w-full h-3/4 object-cover mb-4"/>
             <div className="p-">
                 <div className="text-lg font-light text-gray-700 mb-2">{brand}<span
                     className="text-gray-500 font-light text-sm p-4">{category}</span></div>

@@ -31,7 +31,7 @@ function Footer() {
                 </a>
             </div>
             <div className="flex items-center py-8 p-16 pt-0">
-                <a href="https://digitalbeacon.co/report/purest-picks-vercel-app" className="pt-0 p-8 font-light text-sm text-emerald-700 sm:p-0 xs:p-0">
+                <a href="https://digitalbeacon.co/report/purest-picks-vercel-app" className="pt-0 p-8 font-light text-sm text-emerald-700">
                     this web page has been graded A+
                 </a>
             </div>
