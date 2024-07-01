@@ -137,13 +137,13 @@ function App() {
     return (
         <>
             <Navbar></Navbar>
-            <div className="text-9xl p-60  font-serif">
+            <div className="xs:p-5 sm:p-20 2xl:p-60 text-9xl p-60 font-serif xs:text-6xl sm:text-7xl xl:text-8xl">
                 {items.map((item, i) => (
                     <Card key={i} text={item} index={i}/>
                 ))}
             </div>
             <br></br> <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-            <div className="App px-60 pt-5">
+            <div className="App xs:p-5 sm:p-20 2xl:p-60 pt-5">
                 <ProductGrid products={products}/>
             </div>
             <Footer></Footer>
