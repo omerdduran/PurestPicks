@@ -51,7 +51,7 @@ function App() {
             brand: 'Walden',
             category: 'Electronics',
             productName: 'Walden Meditation Cushion + Mat Set',
-            image: 'assets/Walden Meditation Cushion + Mat Set  (Optimized).webp',
+            image: 'assets/waldenmeditate.jpeg',
             price: '2499',
             link: 'https://walden.us/products/walden-meditation-cushion-mat-set',
         },
