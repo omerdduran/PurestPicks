@@ -32,21 +32,24 @@ Purest Picks is a sleek and minimalistic website designed to showcase products.
 ```
 minimal-products/
 ├── node_modules/        # Project dependencies
-├── public/              # Static assets
-│   └── index.html       # Main HTML file
+├── public/              # Public assets
+│   └── assets/          # Static assets
 ├── src/                 # Source files
-│   ├── assets/          # Images, fonts, etc.
+│   ├── assets/          # Assets used in the project
 │   ├── components/      # Reusable components
-│   ├── pages/           # Page components
-│   └── main.js          # Main JavaScript file
+│   ├── style/           # Styling files
+│   ├── App.jsx          # Main App component
+│   └── main.jsx         # Main entry point
 ├── .eslintrc.cjs        # ESLint configuration
 ├── .gitignore           # Git ignore file
-├── package-lock.json    # Lockfile for npm dependencies
+├── index.html           # Main HTML file
 ├── package.json         # Project metadata and dependencies
+├── package-lock.json    # Lockfile for npm dependencies
 ├── postcss.config.js    # PostCSS configuration
+├── README.md            # Project documentation
 ├── tailwind.config.js   # Tailwind CSS configuration
-├── vite.config.js       # Vite configuration
-└── README.md            # Project documentation
+└── vite.config.js       # Vite configuration
+
 ```
 
 ## Installation
