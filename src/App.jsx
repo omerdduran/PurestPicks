@@ -25,7 +25,7 @@ function App() {
         },
         {
             brand: 'James',
-            category: 'Electronics',
+            category: 'Accessories',
             productName: 'The Randolph',
             image: 'assets/The Randolph (Optimized).webp',
             price: '2499',
@@ -33,7 +33,7 @@ function App() {
         },
         {
             brand: 'Gestalten',
-            category: 'Electronics',
+            category: 'Books',
             productName: 'Soft Electronics',
             image: 'assets/softelectronics (Optimized).webp',
             price: '999',
@@ -49,7 +49,7 @@ function App() {
         },
         {
             brand: 'Walden',
-            category: 'Electronics',
+            category: 'Home',
             productName: 'Walden Meditation Cushion + Mat Set',
             image: 'assets/waldenmeditate.jpeg',
             price: '2499',
@@ -57,7 +57,7 @@ function App() {
         },
         {
             brand: 'Walden',
-            category: 'Electronics',
+            category: 'Home',
             productName: 'Ritual Incense Set',
             image: 'assets/Ritual Incense Set  (Optimized).webp',
             price: '999',
@@ -65,7 +65,7 @@ function App() {
         },
         {
             brand: 'Veark',
-            category: 'Electronics',
+            category: 'Kitchen',
             productName: 'Chef\'s Knife',
             image: 'assets/Chef\'s Knife (Optimized).webp',
             price: '2499',
@@ -73,7 +73,7 @@ function App() {
         },
         {
             brand: 'Veark',
-            category: 'Electronics',
+            category: 'Kitchen',
             productName: 'Carving Fork',
             image: 'assets/Veark F13 - Carving Fork (Optimized).webp',
             price: '999',
@@ -97,7 +97,7 @@ function App() {
         },
         {
             brand: 'Noots',
-            category: 'Electronics',
+            category: 'Pet Supplies',
             productName: 'Figo Shelves',
             image: 'assets/figoshelves (Optimized).webp',
             price: '999',
@@ -105,7 +105,7 @@ function App() {
         },
         {
             brand: 'Prepara',
-            category: 'Electronics',
+            category: 'Kitchen',
             productName: 'Herb Savor',
             image: 'assets/herb-saver (Optimized).webp',
             price: '999',
@@ -113,7 +113,7 @@ function App() {
         },
         {
             brand: 'Finnish Design Shop',
-            category: 'Electronics',
+            category: 'Home',
             productName: 'Illusion Hangers',
             image: 'assets/Finnish Design Shop   (Optimized).webp',
             price: '999',
@@ -121,16 +121,36 @@ function App() {
         },
         {
             brand: 'Apt 2B',
-            category: 'Electronics',
+            category: 'Furniture',
             productName: 'Audrina Bookcase',
             image: 'assets/bvgos0y.webp',
             price: '999',
             link: 'https://www.apt2b.com/products/audrina-bookcase?variant=41311612141657',
         },
-
-
-
-        // Add more products here
+        {
+            brand: 'Punkt.',
+            category: 'Electronics',
+            productName: 'MP02',
+            image: 'assets/product.webp',
+            price: '999',
+            link: 'https://www.punkt.ch/en/products/mp02-4g-mobile-phone/',
+        },
+        {
+            brand: 'Solo Stove',
+            category: 'Outdoor',
+            productName: 'Ranger 2.0',
+            image: 'assets/product-2.webp',
+            price: '999',
+            link: 'https://www.solostove.com/en-de/p/solo-stove-ranger',
+        },
+        {
+            brand: 'Fellow',
+            category: 'Home',
+            productName: 'Clyde Electric Kettle',
+            image: 'assets/product-3.webp',
+            price: '999',
+            link: 'https://www.finnishdesignshop.com/en-us/product/illusion-hanger-set-of-3-black',
+        },
     ];
 
 
