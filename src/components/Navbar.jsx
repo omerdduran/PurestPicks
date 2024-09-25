@@ -1,10 +1,10 @@
-function Navbar() {
 
+function Navbar() {
     return (
-        <div className="justify-center w-full mx-auto bg-white">
-            <div className="flex flex-row w-full my-10 mx-auto items-center justify-between max-w-7xl xs:px-4 sm:px-4">
+        <div className="w-full mx-auto bg-white">
+            <div className="flex flex-row w-full my-10 mx-auto items-center justify-between xs:px-5 sm:px-20 2xl:px-40">
                 <div className="flex items-center text-black">
-                    <a className="font-light inline-flex items-center gap-3 text-xl tracking-tight text-black" href="/">
+                    <a className="font-light tracking-tight text-black" href="/">
                         <span>PurestPicks</span>
                     </a>
                 </div>
@@ -16,7 +16,6 @@ function Navbar() {
                 </nav>
             </div>
         </div>
-
     );
 }
 
