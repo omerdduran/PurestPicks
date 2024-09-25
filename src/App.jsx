@@ -166,25 +166,18 @@ function App() {
 
 
     const filteredProducts = (category) => {
-        // Return all products if the category is 'All Products'
         if (category === 'All Products') {
             return products;
         }
-
-        // Filter products for combined categories
         if (category === 'Home & Kitchen') {
             return products.filter(p => ['Home', 'Kitchen'].includes(p.category));
         }
-
         if (category === 'Outdoor & Furniture') {
             return products.filter(p => ['Outdoor', 'Furniture'].includes(p.category));
         }
-
         if (category === 'Books & Pet Supplies') {
             return products.filter(p => ['Books', 'Pet Supplies'].includes(p.category));
         }
-
-        // Filter products for any other specific category
         return products.filter(p => p.category === category);
     };
 
@@ -207,12 +200,12 @@ function App() {
             </div>
             <div className="App xs:p-5 sm:p-20 2xl:p-60 pt-5">
                 <Tab.Group selectedIndex={selectedIndex} onChange={setSelectedIndex}>
-                    <Tab.List className="flex justify-center space-x-6 mb-16">
+                    <Tab.List className="flex justify-center space-x-2 sm:space-x-6 flex-wrap mb-16">
                         {categories.map((category) => (
                             <Tab
                                 key={category}
                                 className={({ selected }) => clsx(
-                                    'px-8 py-3 text-sm font-medium rounded-full transition-all duration-300 ease-in-out',
+                                    'px-4 py-2 text-xs sm:text-sm font-medium rounded-full transition-all duration-300 ease-in-out',
                                     'focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400',
                                     selected
                                         ? 'bg-gray-900 text-white shadow-lg transform scale-105'

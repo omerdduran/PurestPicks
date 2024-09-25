@@ -12,14 +12,14 @@ const MagicUIButton = ({
             <button
                 onClick={onClick}
                 aria-label={buttonText}
-                className={`flex items-center space-x-2 bg-gradient-to-r ${gradientFrom} ${gradientTo} text-white font-semibold py-2 px-4 rounded-full shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition duration-300 ease-in-out transform hover:-translate-y-1`}
+                className={`flex items-center space-x-2 bg-gradient-to-r ${gradientFrom} ${gradientTo} text-white font-semibold py-2 px-4 sm:py-3 sm:px-6 rounded-full shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition duration-300 ease-in-out transform hover:-translate-y-1`}
                 style={{
-                    boxShadow: '0 4px 15px rgba(255, 0, 255, 0.6)', // Glow efekti burada
+                    boxShadow: '0 4px 15px rgba(255, 0, 255, 0.6)', // Glow effect
                 }}
             >
-                <span>{buttonText}</span>
+                <span className="text-sm sm:text-base">{buttonText}</span>
                 <svg
-                    className={`w-${iconSize} h-${iconSize}`}
+                    className={`w-${iconSize} h-${iconSize} sm:w-${iconSize + 1} sm:h-${iconSize + 1}`}
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
