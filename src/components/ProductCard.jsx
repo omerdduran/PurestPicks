@@ -96,6 +96,8 @@ const ProductCard = ({
                             alt={productName}
                             className="w-full h-full object-cover"
                             loading="lazy"
+                            decoding="async"
+                            fetchpriority={currentImage === 0 ? "high" : "auto"}
                         />
                     </AnimatePresence>
 

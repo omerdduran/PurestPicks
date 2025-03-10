@@ -1,13 +1,22 @@
-import { useState } from 'react';
+import { useState, lazy, Suspense } from 'react';
 import { Tab } from '@headlessui/react';
 import { motion, AnimatePresence } from 'framer-motion';
 import clsx from 'clsx';
-import Navbar from "./components/Navbar.jsx";
-import Footer from "./components/Footer.jsx";
-import ProductGrid from "./components/ProductGrid.jsx";
-import Card from "./components/Card.jsx";
-import MagicUIButton from "./components/MagicUIButton.jsx";
 import products from "@/lib/utils.js";
+
+// Lazy load components
+const Navbar = lazy(() => import("./components/Navbar.jsx"));
+const Footer = lazy(() => import("./components/Footer.jsx"));
+const ProductGrid = lazy(() => import("./components/ProductGrid.jsx"));
+const Card = lazy(() => import("./components/Card.jsx"));
+const MagicUIButton = lazy(() => import("./components/MagicUIButton.jsx"));
+
+// Loading fallback component
+const ComponentLoader = () => (
+    <div className="flex items-center justify-center p-4 h-full">
+        <div className="animate-pulse bg-gray-200 rounded-md w-full h-full"></div>
+    </div>
+);
 
 function App() {
     const [selectedIndex, setSelectedIndex] = useState(0);
@@ -53,7 +62,9 @@ function App() {
 
     return (
         <div className="min-h-screen bg-white">
-            <Navbar/>
+            <Suspense fallback={<ComponentLoader />}>
+                <Navbar/>
+            </Suspense>
 
             {/* Hero Section */}
             <section className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -68,13 +79,15 @@ function App() {
                         variants={itemVariants}
                         className="flex justify-center mb-12"
                     >
-                        <MagicUIButton
-                            buttonText="8 new products added"
-                            buttonColor="from-green-400"
-                            glowColor="rgba(34, 197, 94, 0.6)"
-                            iconSize={1}
-                            onClick={() => console.log("New products clicked")}
-                        />
+                        <Suspense fallback={<ComponentLoader />}>
+                            <MagicUIButton
+                                buttonText="8 new products added"
+                                buttonColor="from-green-400"
+                                glowColor="rgba(34, 197, 94, 0.6)"
+                                iconSize={1}
+                                onClick={() => console.log("New products clicked")}
+                            />
+                        </Suspense>
                     </motion.div>
                     <br></br> <br></br> <br></br> <br></br> <br></br>
 
@@ -84,7 +97,9 @@ function App() {
                         className="w-full font-serif xs:text-6xl sm:text-7xl xl:text-8xl space-y-4"
                     >
                         {items.map((item, i) => (
-                            <Card key={i} text={item} index={i}/>
+                            <Suspense key={i} fallback={<ComponentLoader />}>
+                                <Card text={item} index={i}/>
+                            </Suspense>
                         ))}
                     </motion.div>
                 </motion.div>
@@ -128,7 +143,9 @@ function App() {
                                         exit={{opacity: 0, y: -20}}
                                         transition={{duration: 0.3}}
                                     >
-                                        <ProductGrid products={filteredProducts(category)}/>
+                                        <Suspense fallback={<ComponentLoader />}>
+                                            <ProductGrid products={filteredProducts(category)}/>
+                                        </Suspense>
                                     </motion.div>
                                 </Tab.Panel>
                             ))}
@@ -137,7 +154,9 @@ function App() {
                 </Tab.Group>
             </section>
 
-            <Footer/>
+            <Suspense fallback={<ComponentLoader />}>
+                <Footer/>
+            </Suspense>
         </div>
     );
 }
