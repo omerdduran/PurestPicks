@@ -21,6 +21,7 @@ const ProductCard = ({
                      }) => {
     const [showDetails, setShowDetails] = useState(false);
     const [currentImage, setCurrentImage] = useState(0);
+    const [isHovered, setIsHovered] = useState(false);
     const allImages = [image, ...additionalImages];
 
     // ESC tuşu için listener
@@ -49,7 +50,7 @@ const ProductCard = ({
         },
         hover: {
             y: -8,
-            transition: { duration: 0.4 }
+            transition: { duration: 0.4, ease: "easeOut" }
         }
     };
 
@@ -67,6 +68,13 @@ const ProductCard = ({
         }
     };
 
+    const imageVariants = {
+        hover: { 
+            scale: 1.05,
+            transition: { duration: 0.5 }
+        }
+    };
+
     const nextImage = () => {
         setCurrentImage((prev) => (prev + 1) % allImages.length);
     };
@@ -78,6 +86,8 @@ const ProductCard = ({
             whileHover={showDetails ? {} : "hover"}
             variants={cardVariants}
             className="group relative"
+            onHoverStart={() => setIsHovered(true)}
+            onHoverEnd={() => setIsHovered(false)}
         >
             {/* Main Card Content */}
             <div
@@ -98,21 +108,41 @@ const ProductCard = ({
                             loading="lazy"
                             decoding="async"
                             fetchpriority={currentImage === 0 ? "high" : "auto"}
+                            variants={imageVariants}
                         />
                     </AnimatePresence>
 
-                    {/* Image Counter */}
+                    {/* Image Counter with animation */}
                     {allImages.length > 1 && (
-                        <div className="absolute bottom-3 right-3 bg-black/50 text-white text-xs px-2 py-1 rounded-full">
+                        <motion.div 
+                            className="absolute bottom-3 right-3 bg-black/50 text-white text-xs px-2 py-1 rounded-full"
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ 
+                                opacity: isHovered ? 1 : 0.7,
+                                scale: isHovered ? 1 : 0.9,
+                                y: isHovered ? 0 : 5
+                            }}
+                            transition={{ duration: 0.3 }}
+                        >
                             {currentImage + 1}/{allImages.length}
-                        </div>
+                        </motion.div>
                     )}
 
-                    {/* Quick Info Icons */}
+                    {/* Quick Info Icons with improved animations */}
                     <div className="absolute top-3 left-3 flex gap-2">
                         {awards.length > 0 && (
                             <motion.div
-                                whileHover={{ scale: 1.1 }}
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ 
+                                    opacity: 1, 
+                                    x: 0,
+                                    transition: { delay: 0.1 }
+                                }}
+                                whileHover={{ 
+                                    scale: 1.2,
+                                    rotate: [0, -5, 5, 0],
+                                    transition: { duration: 0.3 }
+                                }}
                                 className="bg-white/90 p-1.5 rounded-full"
                             >
                                 <Award className="w-4 h-4 text-gray-700" />
@@ -120,7 +150,17 @@ const ProductCard = ({
                         )}
                         {sustainability && (
                             <motion.div
-                                whileHover={{ scale: 1.1 }}
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ 
+                                    opacity: 1, 
+                                    x: 0,
+                                    transition: { delay: 0.2 }
+                                }}
+                                whileHover={{ 
+                                    scale: 1.2,
+                                    rotate: [0, -5, 5, 0],
+                                    transition: { duration: 0.3 }
+                                }}
                                 className="bg-white/90 p-1.5 rounded-full"
                             >
                                 <Leaf className="w-4 h-4 text-green-600" />
@@ -128,7 +168,17 @@ const ProductCard = ({
                         )}
                         {designStory && (
                             <motion.div
-                                whileHover={{ scale: 1.1 }}
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ 
+                                    opacity: 1, 
+                                    x: 0,
+                                    transition: { delay: 0.3 }
+                                }}
+                                whileHover={{ 
+                                    scale: 1.2,
+                                    rotate: [0, -5, 5, 0],
+                                    transition: { duration: 0.3 }
+                                }}
                                 className="bg-white/90 p-1.5 rounded-full"
                             >
                                 <Lightbulb className="w-4 h-4 text-gray-700" />

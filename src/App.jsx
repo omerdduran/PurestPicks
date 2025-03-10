@@ -111,7 +111,7 @@ function App() {
                 <Tab.Group selectedIndex={selectedIndex} onChange={setSelectedIndex}>
                     {/* Categories */}
                     <Tab.List className="flex justify-center space-x-2 sm:space-x-6 flex-wrap mb-16">
-                        {categories.map((category) => (
+                        {categories.map((category, index) => (
                             <Tab
                                 key={category}
                                 className={({selected}) => clsx(
@@ -124,7 +124,21 @@ function App() {
                                         : 'text-gray-500 hover:bg-gray-200 hover:text-gray-900'
                                 )}
                             >
-                                {category}
+                                <motion.span
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ 
+                                        opacity: 1, 
+                                        y: 0,
+                                        transition: { delay: 0.1 * index, duration: 0.3 }
+                                    }}
+                                    whileHover={{ 
+                                        scale: 1.05,
+                                        transition: { duration: 0.2 }
+                                    }}
+                                    whileTap={{ scale: 0.95 }}
+                                >
+                                    {category}
+                                </motion.span>
                             </Tab>
                         ))}
                     </Tab.List>
